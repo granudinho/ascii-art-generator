@@ -1,0 +1,25 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+.openai/
+.ssh/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local tools and generated output
+node_modules/
+outputs/
+*.log
+*.zip
+*.tar.gz
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Keep personal input media out of source control
+uploads/
+media/
