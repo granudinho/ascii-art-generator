@@ -10,3 +10,15 @@ let packed=[],p=19;while(frame[p]){let n=frame[p++];packed.push(...frame.slice(p
 assert.equal(values[0],256);assert.equal(values.at(-1),257);const literals=values.filter(x=>x<256);assert.equal(literals.length,w*h);for(let i=0;i<literals.length;i++)assert.equal(literals[i],(pixels[i*4]>>5)<<5|(pixels[i*4+1]>>5)<<2|(pixels[i*4+2]>>6));
 console.log('PASS: brightness mapping, inversion, GIF signature, dimensions, timing, block boundaries, and all 640 encoded pixels.');
 
+
+// Sample playback must select one cropped atlas cell, including at the loop boundary.
+const sampleMeta=code.match(/const sampleAnimation=(.*);/)[1];
+scope.sampleAnimation=JSON.parse(sampleMeta);scope.mascot={complete:true,naturalWidth:1960};
+const draws=[];scope.sampleCtx={fillRect(){},drawImage(...args){draws.push(args)}};
+vm.runInContext(code.slice(code.indexOf('function demo(t)'),code.indexOf('function dimensions()')),scope);
+for(const [time,index] of [[0,0],[.14,1],[4.7,36],[4.82,0]]){
+ scope.demo(time);const args=draws.at(-1);
+ assert.equal(args[1],(index%8)*245);assert.equal(args[2],Math.floor(index/8)*415);
+ assert.equal(args[3],245);assert.equal(args[4],415);assert.equal(args[7],245);assert.equal(args[8],415);
+}
+console.log('PASS: cropped sample frame selection, sizing, and animation loop.');

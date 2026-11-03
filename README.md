@@ -60,3 +60,7 @@ Contributions and bug reports are welcome. Include your browser/version and step
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## Visual theme
+
+The current design uses a rainforest photograph, Venezuela-inspired yellow/blue/red accents, and real colored ASCII macaw artwork. The macaw artwork is converted from supplied photographs using image processing and text sampling, without generative imagery. The sample animation uses a cropped frame atlas so pause, looping, and exports share the same timing. Serve all files under `dist/`, including the `assets/` folder and both stylesheets.

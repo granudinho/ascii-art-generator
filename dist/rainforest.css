@@ -1,0 +1,37 @@
+/* Rainforest theme: supplied photography and the macaw's existing colors. */
+:root{--paper:#06140f;--ink:#f5f3dd;--muted:#acbcb0;--line:#324c3d;--blue:#efc64c;--panel:#0a2118;--gold:#f5cd4b;--wing:#429ed2;--scarlet:#ec6150}
+body{background:#06140f;color:var(--ink);background-image:none;isolation:isolate}
+body:before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(3,18,12,.95),rgba(3,19,13,.72) 48%,rgba(3,19,13,.34)),linear-gradient(0deg,rgba(3,17,11,.8),transparent 75%),url('assets/rainforest.webp') center 62%/cover no-repeat}
+body:after{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#f5cd4b 0 33.333%,#348ac9 33.333% 66.666%,#e85948 66.666%);pointer-events:none}
+header{background:#071c1490;border-color:#75886a38;backdrop-filter:blur(14px)}
+.brand{color:#f6f2d7}.brand small{color:#d5c98f}.brand-macaw{filter:drop-shadow(0 3px 9px #0006)}
+nav{color:#c0cdbf}nav .active{color:#ffe58b;border-color:#f5cd4b}nav a:hover{color:#fff1b6}
+.privacy{color:#c1ceba}i,.blue-dot{background:#f5cd4b;box-shadow:0 0 10px #efc64c45}
+.intro{min-height:445px;gap:50px}.hero-copy{padding:30px 0;text-shadow:0 2px 14px #00100777}
+.eyebrow{color:#f5d979}.tiny-square{background:#ec6150}
+h1{letter-spacing:-3.5px}h1 em{color:#f5cd4b}.subtitle{color:#ced8ca;max-width:590px;line-height:1.85}
+.hero-tags{color:#f6e7b8}.hero-tags span{padding-bottom:8px;border-bottom:2px solid #f5cd4b}.hero-tags span:nth-of-type(2){border-color:#429ed2}.hero-tags span:nth-of-type(3){border-color:#ec6150}.hero-tags b{color:#7e9b86}
+.hero-art{height:385px}.hero-art img{height:345px;filter:drop-shadow(0 12px 32px #0008)}.orbit{display:none}.art-coordinate{color:#d0d7b4}.hero-art figcaption{color:#e6dfb5;background:#092017b8;padding:9px 11px;border-radius:3px}.crosshair{color:#dfc576}
+.studio-bar{border-color:#afbc8d45;color:#dce1c8}.studio-bar b{color:#f5cd4b}.studio-bar>span:last-child{color:#bacab7}.blue-text{color:#ed715e}
+.workspace{border-color:#6a82604d;background:#0a2118;box-shadow:0 24px 70px #0005}
+aside{background:linear-gradient(160deg,#102c20f7,#091d16fc);border-color:#38513c}.preview-panel{background:linear-gradient(135deg,#123024f2,#081d16f7)}
+.panel-heading{color:#e2dcae}.panel-heading>span:last-child:not(:first-child){color:#ea8b6a}.controls-title{border-color:#37503a}.textbutton{color:#c5c994}
+.drop{background:#1b3a27aa;border-color:#72824b}.drop:hover,.drop.over{background:#28472c;border-color:#f5cd4b}.upload-icon{color:#f5cd4b}.drop strong{color:#f3e8b8}.drop span:not(.upload-icon){color:#b1c2a6}.drop small{color:#8ba180}
+#filename{color:#a8b89c}.field{color:#cfdbc8}.field output{color:#eed272}.ends{color:#9bb18c}
+select{background:#142d20;color:#ecedcf;border-color:#456043}input[type=range]{accent-color:#429ed2}input[type=color]{background:#193423;border-color:#617449}.colors label{color:#c3cfb7}.toggle{color:#c3cfb7}.toggle input{accent-color:#f5cd4b}
+.preview-heading{color:#dcd7ae}.chip{background:#1b3525;border-color:#526344;color:#d1d5ae}.chip:hover{border-color:#f5cd4b;color:#fff0b4}
+.stage{background-color:#06150f;border-color:#405736;background-image:linear-gradient(#91a65e0b 1px,transparent 1px),linear-gradient(90deg,#91a65e0b 1px,transparent 1px)}
+.stage:before,.stage:after{color:#8d9b5e}.stage-corner{color:#899a6a}.preview-footer{color:#b6c19d}.dot{color:#e9c749}
+.export{border-color:#385136}.export p{color:#b2c2a7}.primary{background:#f5cd4b;color:#152313;border-color:#ffe48b;box-shadow:0 4px 18px #0002}.primary:hover{background:#ffe184}
+#status{color:#b0c09c}progress{accent-color:#f5cd4b}footer strong{color:#e2dfb9}footer p{color:#b5c5a8}.footnum{color:#f1ce59}.footnote{color:#aabc9c}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,.drop:focus-within{outline-color:#ffe184}
+@media(max-width:1000px){.intro{gap:24px}.hero-art{height:340px}.hero-art img{height:300px}}
+@media(max-width:650px){body:before{background:linear-gradient(90deg,#041a12dc,#041a12a8),url('assets/rainforest.webp') 60% center/cover no-repeat}.intro{gap:0;min-height:0}.hero-copy{padding:5px 0 0}h1{letter-spacing:-2.8px}.hero-art{height:285px}.hero-art img{height:260px}.hero-art figcaption{font-size:7px}.subtitle{color:#d2dccb}header{backdrop-filter:none}}
+/* Let the complete perched macaw and its long tail fit in the hero. */
+.hero-art{height:510px}.hero-art img{height:470px;max-width:460px}.intro{min-height:550px}
+/* The frame follows the media aspect ratio; no decorative grid or side padding. */
+.stage{flex:0 0 auto;align-self:center;width:min(100%,calc(min(72vh,740px) * var(--preview-ratio,.59)));min-height:0;padding:0;margin:auto;background:#06150f;background-image:none;line-height:0;border-radius:4px;overflow:hidden}
+.stage canvas{display:block;width:100%;height:auto;max-height:none;object-fit:initial}.stage:before,.stage:after,.stage-corner{display:none}
+@media(max-width:1000px){.hero-art{height:460px}.hero-art img{height:420px}.intro{min-height:500px}}
+@media(max-width:650px){.hero-art{height:430px}.hero-art img{height:390px}.intro{min-height:0}.stage{min-height:0;padding:0;margin:16px auto;width:min(100%,calc(65vh * var(--preview-ratio,.59)))}}
+.hero-art img{filter:drop-shadow(0 3px 1px #03130de6) drop-shadow(0 10px 24px #0006)}.brand-macaw{filter:drop-shadow(0 2px 1px #04130de6)}
